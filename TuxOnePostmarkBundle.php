@@ -1,9 +1,9 @@
 <?php
 
-namespace MZ\PostmarkBundle;
+namespace TuxOne\PostmarkBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class MZPostmarkBundle extends Bundle
+class TuxOnePostmarkBundle extends Bundle
 {
 }
