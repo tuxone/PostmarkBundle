@@ -19,9 +19,9 @@ use MZ\PostmarkBundle\Postmark\HTTPClient,
  *
  * @author Miguel Perez <miguel@miguelpz.com>
  */
-class Message
+class Messaged
 {
-    /**
+    /**sss
      * @var \MZ\PostmarkBundle\Postmark\HTTPClient
      */
     protected $client;
@@ -262,6 +262,26 @@ class Message
     	$this->attachments[] = array(
             'Name'        => $filename,
             'Content'     => base64_encode(file_get_contents($file->getRealPath())),
+            'ContentType' => $mimeType
+        );
+
+        return $this;
+    }
+
+    /**
+     * Add fake attachment
+     *
+     * @param string $file
+     * @param string $filename  null
+     * @param string $mimeType  null
+     * @return Message
+     */
+    public function addFakeAttachment($file, $filename, $mimeType)
+    {
+
+        $this->attachments[] = array(
+            'Name'        => $filename,
+            'Content'     => base64_encode($file),
             'ContentType' => $mimeType
         );
 

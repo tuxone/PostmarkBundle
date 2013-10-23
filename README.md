@@ -1,62 +1,31 @@
 # PostmarkBundle
-Symfony2 bundle for [Postmark](http://postmarkapp.com) API [![Build Status](https://secure.travis-ci.org/miguel250/PostmarkBundle.png?branch=master)](http://travis-ci.org/miguel250/PostmarkBundle)
-## Setup
+Symfony2 bundle forked from [https://github.com/miguel250/PostmarkBundle](https://github.com/miguel250/PostmarkBundle)
 
-**Using Composer**
-Add PostmarkBundle in your composer.json:
+## Addons
 
-```js
-{
-    "require": {
-        "mlpz/postmark-bundle": "*"
+**Fake Attachment**
+Attach fake text files
+
+```php
+/**
+     * Add fake attachment
+     *
+     * @param string $file
+     * @param string $filename  null
+     * @param string $mimeType  null
+     * @return Message
+     */
+    public function addFakeAttachment($file, $filename, $mimeType)
+    {
+
+        $this->attachments[] = array(
+            'Name'        => $filename,
+            'Content'     => base64_encode($file),
+            'ContentType' => $mimeType
+        );
+
+        return $this;
     }
-}
-```
-
-``` bash
-$ php composer.phar update mlpz/postmark-bundle
-```
-
-**Using Submodule**
-
-    git submodule add https://github.com/miguel250/PostmarkBundle.git vendor/bundles/MZ/PostmarkBundle
-    git submodule add https://github.com/kriswallsmith/Buzz.git  vendor/buzz
-
-**Add the MZ namespace to autoloader**
-You can skip this when using Composer
-
-``` php
-<?php
-   // app/autoload.php
-   $loader->registerNamespaces(array(
-    // ...
-    'MZ'               => __DIR__.'/../vendor/bundles',
-    'Buzz'             => __DIR__.'/../vendor/buzz/lib',
-  ));
-```
-**Add PostmarkBundle to your application kernel**
-
-``` php
-<?php
-// app/AppKernel.php
-
-public function registerBundles()
-{
-    $bundles = array(
-        // ...
-        new MZ\PostmarkBundle\MZPostmarkBundle(),
-    );
-}
-```
-
-**Enable Postmark in config.yml**
-``` yml
-mz_postmark:
-    api_key: API KEY
-    from_email: info@my-app.com
-    from_name: My App, Inc
-    use_ssl: true
-    timeout: 5
 ```
 
 ## Usage
@@ -68,29 +37,8 @@ $message  = $this->get('postmark.message');
 $message->addTo('test@gmail.com', 'Test Test');
 $message->setSubject('subject');
 $message->setHTMLMessage('<b>email body</b>');
-$message->addAttachment(new Symfony\Component\HttpFoundation\File\File(__FILE__));
+$message->addFakeAttachment('Hello world', 'filename.txt', 'text/plain');
 $response = $message->send();
 
-$message->addTo('test2@gmail.com', 'Test2 Test');
-$message->setSubject('subject2');
-$message->setHTMLMessage('<b>email body</b>');
-$message->addAttachment(new Symfony\Component\HttpFoundation\File\File(__FILE__), 'usethisfilename.php', 'text/plain');
-$response = $message->send();
-?>
-```
-
-**Sending in batch**
-``` php
-<?php
-$message  = $this->get('postmark.message');
-$message->addTo('test@gmail.com', 'Test Test');
-$message->setSubject('subject');
-$message->setHTMLMessage('<b>email body</b>');
-$message->queue(); // Queue the message instead of sending it directly
-
-$message->addTo('test2@gmail.com', 'Test2 Test');
-$message->setSubject('subject2');
-$message->setHTMLMessage('<b>email body</b>');
-$responses = $message->send(); // Send both messages, note that you'll get an array of json responses instead of just the json response
 ?>
 ```
