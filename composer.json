@@ -3,12 +3,16 @@
     "type": "symfony-bundle",
     "description": "postmark bundle",
     "keywords": ["postmark","api", "mailer"],
-    "homepage": "http://www.mlpz.mp",
+    "homepage": "http://alessandroloffredo.com",
     "license": "MIT",
     "authors": [
         {
             "name": "Miguel Perez",
             "email": "miguel@miguelpz.com"
+        },
+        {
+            "name": "Alessandro Loffredo",
+            "email": "cyberalexgm@gmail.com"
         }
     ],
     "require": {
