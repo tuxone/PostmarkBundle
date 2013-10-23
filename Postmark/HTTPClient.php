@@ -12,7 +12,7 @@
 namespace MZ\PostmarkBundle\Postmark;
 
 use  Buzz\Browser,
-     Buzz\Client\Curl;s
+     Buzz\Client\Curl;
 
 /**
  * HTTP client use to send requests to postmark api
