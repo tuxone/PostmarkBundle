@@ -1,5 +1,5 @@
 {
-    "name": "mlpz/postmark-bundle",
+    "name": "tuxone/postmark-bundle",
     "type": "symfony-bundle",
     "description": "postmark bundle",
     "keywords": ["postmark","api", "mailer"],
