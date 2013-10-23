@@ -46,6 +46,6 @@ class TuxOnePostmarkExtension extends Extension
      */
     public function getNamespace()
     {
-        return 'http://symfony.com/schema/dic/mz_postmark';
+        return 'http://symfony.com/schema/dic/tuxone_postmark';
     }
 }
