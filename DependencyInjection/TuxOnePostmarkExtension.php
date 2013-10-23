@@ -1,6 +1,6 @@
 <?php
 
-namespace MZ\PostmarkBundle\DependencyInjection;
+namespace TuxOne\PostmarkBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class MZPostmarkExtension extends Extension
+class TuxOnePostmarkExtension extends Extension
 {
     /**
      * {@inheritDoc}
@@ -27,7 +27,7 @@ class MZPostmarkExtension extends Extension
 
         foreach (array('api_key', 'from_email', 'from_name', 'use_ssl', 'timeout') as $attribute) {
             if (isset($config[$attribute])) {
-                $container->setParameter('mz_postmark.'.$attribute, $config[$attribute]);
+                $container->setParameter('tuxone_postmark.'.$attribute, $config[$attribute]);
             }
         }
     }

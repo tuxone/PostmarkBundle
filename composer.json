@@ -21,7 +21,7 @@
         "kriswallsmith/buzz":">=0.9"
     },
     "autoload": {
-        "psr-0": { "MZ\\PostmarkBundle": "" }
+        "psr-0": { "TuxOne\\PostmarkBundle": "" }
     },
-    "target-dir": "MZ/PostmarkBundle"
+    "target-dir": "TuxOne/PostmarkBundle"
 }

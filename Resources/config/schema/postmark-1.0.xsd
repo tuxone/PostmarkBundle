@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<xsd:schema xmlns="http://symfony.com/schema/dic/mz_postmark"
+<xsd:schema xmlns="http://symfony.com/schema/dic/tuxone_postmark"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://symfony.com/schema/dic/mz_postmark"
     elementFormDefault="qualified">

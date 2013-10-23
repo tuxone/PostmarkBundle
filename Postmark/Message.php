@@ -1,17 +1,8 @@
 <?php
 
-/*
- * This file is part of the MZ\PostMarkBundle
- *
- * (c) Miguel Perez <miguel@miguelpz.com>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
+namespace TuxOne\PostmarkBundle\Postmark;
 
-namespace MZ\PostmarkBundle\Postmark;
-
-use MZ\PostmarkBundle\Postmark\HTTPClient,
+use TuxOne\PostmarkBundle\Postmark\HTTPClient,
     Symfony\Component\HttpFoundation\File\File;
 
 /**
@@ -19,10 +10,10 @@ use MZ\PostmarkBundle\Postmark\HTTPClient,
  *
  * @author Miguel Perez <miguel@miguelpz.com>
  */
-class Messaged
+class Message
 {
     /**sss
-     * @var \MZ\PostmarkBundle\Postmark\HTTPClient
+     * @var \TuxOne\PostmarkBundle\Postmark\HTTPClient
      */
     protected $client;
 

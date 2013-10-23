@@ -1,15 +1,6 @@
 <?php
 
-/*
- * This file is part of the MZ\PostMarkBundle
- *
- * (c) Miguel Perez <miguel@miguelpz.com>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
-
-namespace MZ\PostmarkBundle\Postmark;
+namespace TuxOne\PostmarkBundle\Postmark;
 
 use  Buzz\Browser,
      Buzz\Client\Curl;
@@ -19,7 +10,7 @@ use  Buzz\Browser,
  *
  * @author Miguel Perez <miguel@miguelpz.com>
  */
-class HTTPClientewq
+class HTTPClient
 {
     /**
      * cURL headers

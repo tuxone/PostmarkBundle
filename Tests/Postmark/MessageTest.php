@@ -1,18 +1,9 @@
 <?php
 
-/*
- * This file is part of the MZ\PostmarkBundle
- *
- * (c) Miguel Perez <miguel@mlpz.com>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
+namespace TuxOne\PostmarkBundle\Tests\Postmark;
 
-namespace MZ\PostmarkBundle\Tests\Postmark;
-
-use MZ\PostmarkBundle\Postmark\Message;
-use MZ\PostmarkBundle\Postmark\HTTPClient;
+use TuxOne\PostmarkBundle\Postmark\Message;
+use TuxOne\PostmarkBundle\Postmark\HTTPClient;
 use Symfony\Component\HttpFoundation\File\File;
 
 /**
@@ -25,7 +16,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     /**
      * Test send request
      *
-     * @covers  MZ\PostmarkBundle\Postmark\Message::Send
+     * @covers  TuxOne\PostmarkBundle\Postmark\Message::Send
      */
     public function testSendMessage()
     {
@@ -45,7 +36,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     /**
      * Test multiple send requests
      *
-     * @covers  MZ\PostmarkBundle\Postmark\Message::Send
+     * @covers  TuxOne\PostmarkBundle\Postmark\Message::Send
      */
     public function testSendMultipleMessages()
     {
@@ -86,7 +77,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     /**
      * Test multiple messages via batch
      *
-     * @covers  MZ\PostmarkBundle\Postmark\Message::Send
+     * @covers  TuxOne\PostmarkBundle\Postmark\Message::Send
      */
     public function testSendMultipleMessagesViaBatch()
     {
@@ -131,7 +122,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     /**
      * Test batch greater than 500
      *
-     * @covers  MZ\PostmarkBundle\Postmark\Message::Send
+     * @covers  TuxOne\PostmarkBundle\Postmark\Message::Send
      */
     public function testIssue20()
     {

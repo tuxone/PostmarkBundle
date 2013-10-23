@@ -1,6 +1,6 @@
 <?php
 
-namespace MZ\PostmarkBundle\DependencyInjection;
+namespace TuxOne\PostmarkBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('mz_postmark');
+        $rootNode = $treeBuilder->root('tuxone_postmark');
 
         $rootNode
             ->children()

@@ -1,30 +1,21 @@
 <?php
 
-/*
- * This file is part of the MZ\PostmarkBundle
- *
- * (c) Miguel Perez <miguel@mlpz.com>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
+namespace TuxOne\PostmarkBundle\Tests\DependencyInjection;
 
-namespace MZ\PostmarkBundle\Tests\DependencyInjection;
-
-use MZ\PostmarkBundle\DependencyInjection\MZPostmarkExtension;
+use TuxOne\PostmarkBundle\DependencyInjection\TuxOnePostmarkExtension;
 
 /**
- * Test MZPostmarkBundleExtension
+ * Test TuxOnePostmarkBundleExtension
  *
  * @author Miguel Perez <miguel@mlpz.mp>
  */
-class MZPostmarkExtensionTest extends \PHPUnit_Framework_TestCase
+class TuxOnePostmarkExtensionTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
      * Test load failed
      *
-     * @covers MZ\PostmarkBundle\DependencyInjection\MZPostmarkExtension::load
+     * @covers TuxOne\PostmarkBundle\DependencyInjection\MZPostmarkExtension::load
      */
     public function testLoadFailed()
     {
@@ -32,7 +23,7 @@ class MZPostmarkExtensionTest extends \PHPUnit_Framework_TestCase
                 ->disableOriginalConstructor()
                 ->getMock();
 
-        $extension = $this->getMockBuilder('MZ\PostmarkBundle\DependencyInjection\MZPostmarkExtension')
+        $extension = $this->getMockBuilder('TuxOne\PostmarkBundle\DependencyInjection\TuxOnePostmarkExtension')
                 ->getMock();
 
         $extension->load(array(array()), $container);
@@ -41,7 +32,7 @@ class MZPostmarkExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * Test setParameters
      *
-     * @covers MZ\PostmarkBundle\DependencyInjection\MZPostmarkExtension::load
+     * @covers TuxOne\PostmarkBundle\DependencyInjection\MZPostmarkExtension::load
      */
     public function testLoadSetParameters()
     {
@@ -60,7 +51,7 @@ class MZPostmarkExtensionTest extends \PHPUnit_Framework_TestCase
                 ->method('getParameterBag')
                 ->will($this->returnValue($parameterBag));
 
-        $extension = new MZPostmarkExtension();
+        $extension = new TuxOnePostmarkExtension();
         $configs = array(
             array('api_key' => 'foo'),
             array('from_email' => 'foo'),

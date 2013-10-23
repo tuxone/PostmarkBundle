@@ -3,7 +3,7 @@
 <phpunit bootstrap="./Tests/bootstrap.php" color="true">
 
     <testsuites>
-        <testsuite name="MZ\PostmarkBundle Test Suite">
+        <testsuite name="TuxOne\PostmarkBundle Test Suite">
             <directory suffix="Test.php">./Tests</directory>
         </testsuite>
     </testsuites>
